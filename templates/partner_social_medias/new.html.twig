@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PartnerSocialMedias{% endblock %}
+
+{% block body %}
+    <h1>Create new PartnerSocialMedias</h1>
+
+    {{ include('partner_social_medias/_form.html.twig') }}
+
+    <a href="{{ path('app_partner_social_medias_index') }}">back to list</a>
+{% endblock %}

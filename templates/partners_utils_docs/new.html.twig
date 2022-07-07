@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PartnersUtilsDocs{% endblock %}
+
+{% block body %}
+    <h1>Create new PartnersUtilsDocs</h1>
+
+    {{ include('partners_utils_docs/_form.html.twig') }}
+
+    <a href="{{ path('app_partners_utils_docs_index') }}">back to list</a>
+{% endblock %}

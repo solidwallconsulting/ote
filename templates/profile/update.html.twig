@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ app.user.firstname }} {{ app.user.lastname }}{% endblock %}
+
+{% block body %}
+
+
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Acceuil</a></li>
+          <li>{{ app.user.firstname }} {{ app.user.lastname }}</li>
+          <li>Modifier mes informations</li>
+          
+        </ol>
+        <h2>Modifier mes informations</h2>
+
+      </div>
+    </section>
+    
+
+    <section class="inner-page">
+      <div class="container" data-aos="fade-up">
+         <div class="row">
+           <div class="col-sm-6 m-auto">
+             <div class="avatar" style="background-image: url({{ app.user.photoURL }});"></div>
+
+             
+             {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-success">{{ button_label|default('Modifier') }}</button>
+            {{ form_end(form) }}
+
+
+
+           </div>
+         </div>
+      </div>
+    </section> 
+
+{% endblock %}

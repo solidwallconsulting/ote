@@ -1,0 +1,104 @@
+ 
+            
+
+{{ form_start(form) }}
+
+
+
+<div class="row mb-4">
+    <div class="col-sm-12">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }} 
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-sm-12">
+        {{ form_label(form.about) }}
+        {{ form_widget(form.about) }} 
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-sm-12">
+        {{ form_label(form.address) }}
+        {{ form_widget(form.address) }} 
+    </div>
+</div>
+
+
+<div class="row mb-4">
+    <div class="col-sm-12">
+        {{ form_label(form.phone) }}
+        {{ form_widget(form.phone) }} 
+    </div>
+</div>
+        
+<div class="row mb-4">
+    <div class="col-sm-12">
+        {{ form_label(form.phone2) }}
+        {{ form_widget(form.phone2) }} 
+    </div>
+</div>
+        
+
+<div class="row mb-4">
+    <div class="col-sm-12">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }} 
+    </div>
+</div>
+        
+
+
+
+    <div class="row mb-4">
+        <div class="col-sm-12">
+            {{ form_label(form.website) }}
+            {{ form_widget(form.website) }} 
+        </div>
+    </div>
+            
+
+
+    <div class="row mb-4">
+        <div class="col-sm-12">
+            {{ form_label(form.youtubeFrame) }}
+            {{ form_widget(form.youtubeFrame) }} 
+        </div>
+    </div>
+            
+
+    <div class="row mb-4">
+        <div class="col-sm-6">
+            <div class="form-group">
+                {% if partner.logoURL != null %}
+                 <img src="{{ partner.logoURL }}" class="rounded " width="180px" />
+                {% endif %}
+                
+                <hr>
+                {{ form_label(form.logoURL) }}
+                {{ form_widget(form.logoURL) }} 
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+            {% if partner.coverImageURL != null %}
+                 <img src="{{ partner.coverImageURL }}" class="rounded w-100" />
+                {% endif %}
+                
+                <hr>
+
+                {{ form_label(form.coverImageURL) }}
+                {{ form_widget(form.coverImageURL) }} 
+            </div>
+        </div>
+    </div>
+
+
+    <button class="btn btn-primary">{{ button_label|default('Suivant') }}</button>
+{{ form_end(form) }}
+
+
+
+

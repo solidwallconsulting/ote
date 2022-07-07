@@ -1,0 +1,315 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tunisiens Du Monde{% endblock %}
+
+{% block body %}
+
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="usefulldocs" tabindex="-1" aria-labelledby="usefulldocsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="usefulldocsLabel">Documents utiles</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="list-group">
+        
+
+        {% for item in partner.partnersUtilsDocs %}
+            <a href="{{ item.docURL }}" target="blank" download type="button" class="list-group-item" aria-current="true">
+                <i class='bx bxs-file-blank' ></i> {{ item.name }}
+            </a> 
+            
+            
+        {% endfor %}
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="aboutmodal" tabindex="-1" aria-labelledby="aboutmodall" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aboutmodall">Présentation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="list-group">
+            <p class="text-muted">{{partner}}</p>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="usefullinksmodal" tabindex="-1" aria-labelledby="usefullinksmodall" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="usefullinksmodall">Liens utiles</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="list-group">
+                    {% for item in partner.partnersUtilLinkes %}
+            <a href="{{ item.value }}" target="blank" download type="button" class="list-group-item" aria-current="true">
+                <i class='bx bx-globe' ></i> {{ item.name }}
+            </a> 
+            
+            
+        {% endfor %}
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    <div class="main-app-container">
+    
+            <div class="main-app">
+
+
+                <div class="stand-logo">
+                    <img src="{{ partner.logoURL }}" class="w-100" alt="">
+                </div>
+
+                {% if partner.youtubeFrame != null %}
+                    <div class="youtube-frame">
+                        {{ partner.youtubeFrame | raw }}
+                    </div>
+
+                    {% else %}
+                    <div class="cover-frame">
+                        <img src="{{ partner.coverImageUrl }}" class="w-100"> 
+                    </div>
+                
+                {% endif %}
+                
+
+
+
+                <div class="social-medias-app">
+                    <ul>
+                        {% for item in partner.partnerSocialMedias %}
+                            <li>
+                                <a href="{{ item.value }}">{{ item.socialMedia.icon | raw }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+
+
+
+                <div class="download-docs-app">
+                    <p><a type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#usefulldocs"><i class='bx bx-library'></i>  Documents utiles</a> </p>
+                </div>
+
+                <div class="about-modal-docs-app">
+                    <p><a type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#aboutmodal"> <strong>Présentation</strong></a> </p>
+                </div>
+                
+
+                <div class="about-modal-docs-app">
+                    <p><a type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#aboutmodal"> <strong>Présentation</strong></a> </p>
+                </div>
+                
+
+                <div class="usefull-links">
+                    <p><a type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#usefullinksmodal"> <strong>Liens utiles</strong></a> </p>
+                </div>
+                
+
+
+                    <div class="contact-card">
+                       <i class='bx bx-envelope'></i>  {{ partner.email }} <br>
+                       <i class='bx bx-phone'></i>  {{ partner.phone }} / {{ partner.phone2 }}  <br> 
+                       
+                       <i class='bx bx-current-location'></i>  {{ partner.address }} <br>
+                       <i class='bx bx-globe' ></i>  {{ partner.website }} <br>
+                       
+                       
+
+
+                    </div>
+
+                
+
+
+
+
+
+                    <div class="chatbot closed" id="chtabot">
+
+                    <span class="close-btn" id="closebtn">&times;</span>
+                    <div class="zone-chat" >
+                        <div class="msg-list">
+                            <div class="messages" id="msgList"></div>
+                        </div>
+                        <div class="reply-zone">
+                            <input type="text" id="replyinput" class="input-reply" placeholder="écrivez votre question...">
+                        </div>
+                    </div>
+
+
+                    <div class="chat-bot-bar" id="chatbotbar">
+                        Cliquer pour poser une question
+                    </div>
+                </div>
+
+
+
+                
+
+            </div>
+            
+    
+    </div>
+
+
+
+    <script>
+    
+    var chtabot = document.getElementById('chtabot');
+var chatbotbar = document.getElementById('chatbotbar');
+var replyinput = document.getElementById('replyinput');
+var msgList = document.getElementById('msgList');
+var closebtn = document.getElementById('closebtn');
+var messagesListFromUser = [];
+
+
+chatbotbar.addEventListener('click',function(){
+    chtabot.classList="chatbot open";
+})
+
+
+replyinput.addEventListener('keyup',function(e){
+    const code = e.code;
+    const val = e.target.value;
+    
+
+    if (code === 'Enter') {
+        if (val !== '') {
+            const element = `<div class="message-row">
+            <div class="sent-msg">
+                ${val}
+            </div>
+        </div>`;
+
+        messagesListFromUser.push(val);
+
+        msgList.innerHTML = msgList.innerHTML + element;
+
+        replyinput.value='';
+
+        saveMessage(val);
+
+        relpyFromBot();
+        }
+    }
+
+    
+})
+
+
+function saveMessage(message){
+    const url ='/main/app/send-message/{{partner.id}}/'+message;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onload = () => console.log(xhr.responseText);
+
+    let data = '{ "message": "'+message+'" }';
+
+    xhr.send(data);
+}
+
+
+function relpyFromBot(){
+
+    const msgFromUser = messagesListFromUser.pop();
+    const keyWorksFromUser = msgFromUser.split(" ");
+
+ 
+
+    const element = `<div class="message-row">
+        <div class="recive-msg">
+            Merci d'avoir utilisé nos services, nous vous répondrons dans les plus brefs délais.
+        </div>
+    </div>`;
+    msgList.innerHTML = msgList.innerHTML + element;  
+
+}
+
+
+
+
+closebtn.addEventListener('click',function(){
+    chtabot.classList="chatbot closed";
+})
+
+
+
+    
+    
+    </script>
+
+
+<!--
+
+    <div style="height: 100vh" class="d-flex justify-content-center align-items-center text-center">
+         <p class="text-muted">
+
+
+            <img src="/images/logo.png" width="220" /> 
+            
+            <br>
+            <br>
+
+         
+
+            Merci pour votre inscription
+
+            
+            <br>
+
+            <a href="{{ path('espace_client_route') }}">Consulter mon espace</a>
+         
+         </p>
+    </div>
+
+-->
+{% endblock %}
+

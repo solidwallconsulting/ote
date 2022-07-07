@@ -1,0 +1,559 @@
+
+
+.intro{
+    padding-top: 38px;
+    padding-left: 141px;
+    padding-right: 141px;
+    background-image: url(../../images/bg.png);
+    background-size: cover;
+    background-position: left;
+    
+}
+
+
+.bg-intro-other{ 
+    padding-left: 141px;
+    padding-right: 141px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    
+    background-image: url(../../images/bg.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 2px 30px 0px #9d9d9d;
+}
+
+
+.intro-other{
+    background-image: unset;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    
+
+    
+}
+.intro > .bg-intro {
+    min-height: calc( 100vh - 38px );
+
+    /*background-image: url(/images/bg-1.png);*/
+    background-size: 47%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 179px;
+}
+
+ 
+
+.main-logo > img{
+    width: 300px;
+}
+
+.action-btn{
+    padding: 7px 10px;
+    min-width: 180px;
+    font-size: 20px;
+    color: #00539B;
+    background: #005d8221 0% 0% no-repeat padding-box;
+    box-shadow: 0px 8px 10px #00000024;
+    mix-blend-mode: multiply;
+    border-radius: 40px;
+    opacity: 1;
+    border: 2px solid #00539b;
+}
+
+
+.actionsbtn-header{
+    padding-top:15px
+}
+.actionsbtn-header > a:first-child{ margin-right: 29px;height: fit-content }
+
+.actionsbtn-header > a{ margin-right: 29px;height: fit-content }
+
+
+.top-logos > .logo-bloc:first-child{ border-right: 2px solid #ababab; 
+    padding-right: 18px;
+ }
+
+
+.main-logos{
+    margin-top: 72px;
+}
+
+.logo-bloc{  
+    margin-right: 15px;
+    height: 80px;
+}
+
+
+.title{
+    color: #00539B;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+
+.intro-text{
+    margin-top: 88px;
+}
+
+.sub-title{
+    background: transparent linear-gradient(90deg, #C90026 0%, #BF0024 49%, #9F0C27 75%, #940923 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 0px #00000033;
+    opacity: 1;
+    color: white;
+    font-size: 25px;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+
+
+.sexe-choice input{
+    margin: 15px;
+}
+
+
+.form-group > label{
+    font-weight: bold;
+}
+
+
+.top-logos > .logo-bloc > img{
+    width: unset !important;
+    height: 100% !important;
+}
+
+
+.top-logos > .logo-bloc > img{
+    width: unset !important;
+    height: 100% !important;
+}
+
+
+
+
+
+.app-avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    border: 3px solid #c5d5b3;
+}
+
+
+.connected-user-info{
+    margin-top: 12px;
+    margin-right: 15px;
+    text-transform: capitalize;
+    color: #005d82;
+}
+
+
+
+.bottom-action-bloc{
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.bloc-title{
+    font-size: 45px;
+    color: #000;
+    font-weight: bolder;
+}
+
+
+.footer-icons{
+    height: 80px;
+}
+
+.footer-bloc{
+    padding: 60px 140px;
+    
+    background-color: #233862;
+}
+
+.footer-separator{
+    height: 1px;
+    background-color: white;
+    width: 100%;
+}
+
+.text-footer{
+    color: white;
+    font-size: 20px;
+    line-height: 32px;
+} 
+
+
+
+.social-icons{
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+    font-size: 41px;
+}
+
+
+
+
+.card-flip {  
+    width: 100%;
+    height: 200px;
+    perspective: 500px;
+  }
+  
+  .content-flip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  
+  .card-flip:hover .content-flip {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+  }
+  
+  .front-flip,
+  .back-flip {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    color: #03446A;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .back-flip {
+    background: #ffffff;
+    color: white;
+    transform: rotateY( 180deg );
+  }
+
+/* main app */
+
+.main-app{
+    background-image: url(/images/s1.png);
+    width: 1077px;
+    height: 610px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #b6b6b6;
+    position: relative;
+}
+
+
+.stand-logo{
+    position: absolute;
+    top: 23%;
+    left: 14%;
+    width: 137px;
+    height: 100px;
+}
+
+
+.youtube-frame{
+    position: absolute;
+    top: 38%;
+    left: 30%;
+    width: 100px;
+    width: 225px;
+}
+
+.cover-frame{
+    position: absolute;
+    top: 41%;
+    left: 38%;
+    width: 225px;
+}
+
+.social-medias-app{
+    position: absolute;
+    top: 54%;
+    left: 2.5%;
+    width: 100px; 
+}
+
+
+.about-modal-docs-app{
+    position: absolute;
+    top: 60%;
+    left: 18%;
+    width: 100px;
+}
+
+
+.download-docs-app{
+    position: absolute;
+    top: 67%;
+    right: 7%;
+    width: 191px;
+}
+
+
+.usefull-links{
+    position: absolute;
+    top: 58%;
+    left: 40%;
+    width: 191px;
+}
+
+.social-medias-app > ul{
+    list-style: none;
+}
+
+
+.social-medias-app > ul > li{
+    font-size: 25px; 
+    margin-bottom: 2px;
+
+}
+
+.social-medias-app > ul > li > a{
+    color: #000;
+    
+
+}
+
+
+
+
+.main-app-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#acacac, #eeeeee);
+}
+
+
+
+.chatbot{
+    position: absolute;
+    right: 20px;
+    bottom: 20px; 
+}
+
+
+.close-btn{
+    font-size: 35px;
+    display: none;
+    background-color: white;
+}
+
+.zone-chat{
+    display: none; 
+}
+
+.chat-bot-bar{
+    display: none;
+}
+
+
+.chatbot.closed > .zone-chat{
+    display: none;
+}
+
+.chatbot.closed > .close-btn{
+    display: none;
+}
+
+ 
+
+.chatbot.closed > .chat-bot-bar{
+    display: block;
+}
+
+
+
+.chatbot.open > .zone-chat{
+    display: block;
+}
+
+.chatbot.open > .chat-bot-bar{
+    display: none;
+}
+
+.chatbot.open > .close-btn {
+    display: block;
+    padding-left: 15px;
+}
+
+.chat-bot-bar{
+    background: #323232;
+    padding: 10px 52px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+.contact-card{
+
+    background: #323232;
+    padding: 10px 52px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 17px;
+    left: 18px;
+    color: white;
+    font-size: 14px;
+
+
+}
+
+.zone-chat{
+    width: 300px;
+    height: 239px;
+    display: flex;
+    flex-direction: column;
+}
+
+ 
+.msg-list{
+    height: calc( 100% - 35px );
+    background: #ededed;
+}
+
+
+.reply-zone{
+    height: 35px;
+
+}
+
+
+.input-reply {
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    border: 0;
+    background-color: #e0e0e0;
+    padding: 0px 5px 0px 20px;
+    outline: none;
+    border-radius: 30px;
+
+
+}
+
+
+.sent-msg{
+    width: fit-content;
+    max-width: 80%;
+    float: right;
+    background-color: #607d8b;
+    color: white;
+    padding: 15px;
+    border-radius: 18px;
+}
+
+.recive-msg{
+    width: fit-content;
+    max-width: 80%;
+    float: left;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 18px;
+}
+
+
+.message-row{
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.messages{
+    height: 100%;
+    overflow-y: scroll;
+    border: 1px solid #dadada;
+    padding: 8px; 
+}
+
+
+
+
+@media screen and ( max-width: 600px ) {
+ 
+    .footer-bloc{
+        padding: 60px 15px;
+    }
+
+    .top-logos > .logo-bloc:first-child{ border-right: 2px solid #ababab; 
+        padding-right: 0px ;
+        border-right: 0px ; 
+    }
+
+
+    .bg-intro-other{ 
+        padding-left: 15px;
+        padding-right: 0px;
+    }
+     
+
+    .intro {
+        padding: 15px;
+        position: relative;
+    }
+
+    .intro > .bg-intro {
+        min-height: 100vh;
+        background-image: unset; 
+    }
+
+    .actionsbtn-header{
+        width: 100%;
+        display: block; 
+        justify-content: center;
+
+        margin-top: 30px;
+    }
+
+    .top-logos{
+        justify-content: space-between;
+    }
+    .app-logo{
+        width: 100%;
+    }
+
+    .action-btn { 
+        min-width: unset;
+        font-size: 16px;
+    }
+
+    
+        
+        .title { 
+            font-size: 23px;
+        }
+
+
+        .sub-title { 
+            font-size: 17px; }
+        
+}
+ 
+

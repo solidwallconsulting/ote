@@ -1,0 +1,73 @@
+
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}OTE | Régions{% endblock %}
+
+{% block body %} 
+    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3"><i class="fadeIn animated bx bx-group"></i> Nos Régions</div>
+         
+        <div class="ms-auto"> 
+                <a href="{{ path('app_region_new') }}" type="button" class="btn btn-primary">Ajouter</a> 
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+
+
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nom du région</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for region in regions %}
+                        <tr>
+                            <td>{{ region.id }}</td>
+                            <td>{{ region.name }}</td>
+                            <td> 
+
+                                <a href="{{ path('app_region_edit', {'id': region.id}) }}" class="action-icon text-info btn">
+                                    <i class="fadeIn animated bx bx-edit-alt"></i>
+                                </a>
+
+                 
+                                    <form class="d-inline-block" method="post" action="{{ path('app_region_delete', {'id': region.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ region.id) }}">
+                                        <button type="submit" class="btn"> <i  class="action-icon  text-danger fadeIn animated bx bx-trash-alt"  ></i></button>
+                                    </form>
+
+
+
+                            </td>
+                        </tr>
+                        
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    
+ 
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+
+<script>
+    $(document).ready(function(){
+        $('.datatable').DataTable();
+    })
+</script>
+{% endblock %}

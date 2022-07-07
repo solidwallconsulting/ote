@@ -1,0 +1,92 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Tunisiens Du Monde | Nos partenaires{% endblock %}
+
+{% block body %} 
+    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3"><i class="fadeIn animated bx bx-group"></i> Nos partenaires</div>
+         
+        <div class="ms-auto"> 
+                <!--<a href="{{ path('app_partners_new') }}" type="button" class="btn btn-primary">Ajouter</a>-->
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table datatable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nom</th>
+                            <th>Logo</th>
+                           <!--<th>Adresse</th>--> 
+                            <th>Téléphoner</th>
+                            <th>Fax</th> 
+                            <th>E-mail</th>
+                            <th>Site web</th> 
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for partner in partners %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ partner.name }} 
+                                
+                                 
+                                  
+                                 
+                            
+                            </td>
+                            <td>
+                                <img src="{{ partner.logoURL }}" width="80px" alt="">
+                            </td>
+                            <!--<td>{{ partner.address }}</td>-->
+                            <td>{{ partner.phone }}</td>
+                            <td>{{ partner.phone2 }}</td>
+                            
+                            <td>{{ partner.email }}</td>
+                            <td>
+                                <a href="{{ partner.website }}">visiter site web</a>
+                            </td>
+                            
+                            
+                            <td>
+                                
+                               <!-- <a href="{{ path('app_partners_edit', {'id': partner.id}) }}" class="action-icon text-info btn">
+                                    <i class="fadeIn animated bx bx-edit-alt"></i>
+                                </a>
+
+                 
+                                <form class="d-inline-block" method="post" action="{{ path('app_partners_delete', {'id': partner.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ partner.id) }}">
+                                    <button type="submit" class="btn"> <i  class="action-icon  text-danger fadeIn animated bx bx-trash-alt"  ></i></button>
+                                </form>-->
+
+                                     
+
+                                
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+ 
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+
+<script>
+    $(document).ready(function(){
+        $('.datatable').DataTable();
+    })
+</script>
+{% endblock %}

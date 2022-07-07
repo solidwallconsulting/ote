@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PartnersUtilsDocs index{% endblock %}
+
+{% block body %}
+    <h1>PartnersUtilsDocs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>DocURL</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partners_utils_doc in partners_utils_docs %}
+            <tr>
+                <td>{{ partners_utils_doc.id }}</td>
+                <td>{{ partners_utils_doc.name }}</td>
+                <td>{{ partners_utils_doc.docURL }}</td>
+                <td>
+                    <a href="{{ path('app_partners_utils_docs_show', {'id': partners_utils_doc.id}) }}">show</a>
+                    <a href="{{ path('app_partners_utils_docs_edit', {'id': partners_utils_doc.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_partners_utils_docs_new') }}">Create new</a>
+{% endblock %}

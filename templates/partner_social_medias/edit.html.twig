@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PartnerSocialMedias{% endblock %}
+
+{% block body %}
+    <h1>Edit PartnerSocialMedias</h1>
+
+    {{ include('partner_social_medias/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_partner_social_medias_index') }}">back to list</a>
+
+    {{ include('partner_social_medias/_delete_form.html.twig') }}
+{% endblock %}

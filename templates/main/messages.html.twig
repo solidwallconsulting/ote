@@ -1,0 +1,73 @@
+{% extends 'base-operateur.html.twig' %}
+
+{% block title %}Tunisiens Du Monde | Mes messages{% endblock %}
+
+{% block body %}
+
+
+
+<div class="chat-wrapper">
+					<div class="chat-sidebar">
+						<div class="chat-sidebar-header">
+							 
+							 
+							<div class="input-group input-group-sm"> <span class="input-group-text bg-transparent"><i class='bx bx-search'></i></span>
+								<input type="text" class="form-control" placeholder="Chercher..." id="search-input"> <span class="input-group-text bg-transparent"></span>
+							</div>
+							
+							
+                            
+						</div>
+						<div class="chat-sidebar-content">
+							<div class="tab-content" id="pills-tabContent">
+								<div class="tab-pane fade show active" id="pills-Chats">
+									 
+									<div class="chat-list">
+										<div class="list-group list-group-flush">
+
+                                            {% for item in talkingWith %}
+                                                <a href="{{ path('operator_messages_direct_app_route',{id:item.id}) }}" class="list-group-item chat-item" searchquery="{{ item.firstname}} {{ item.lastname}}">
+                                                    <div class="d-flex">
+                                                        <div class="chat-user-online">
+                                                            <img src="{{ item.photoURL }}" width="42" height="42" class="rounded-circle" alt="" />
+                                                        </div>
+                                                        <div class="flex-grow-1 ms-2">
+                                                            <h6 class="mb-0 chat-title">{{ item.firstname}} {{ item.lastname}}</h6>
+                                                            <p class="mb-0 chat-msg">ouvrir le chat</p>
+                                                        </div>
+                                                        <!--<div class="chat-time">9:51 AM</div>-->
+
+                                                    </div>
+                                                </a>
+											
+                                            {% endfor %}
+											
+                                            
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="chat-header d-flex align-items-center">
+					
+                    
+						 
+					</div>
+					<div class="chat-content d-flex justify-content-center align-items-center">
+                            <div class="text-muted text-center" >Bienvenue <br>cliquez sur un chat pour continuer</div>
+						 
+						
+                        
+					</div>
+					 
+					<!--start chat overlay-->
+					<div class="overlay chat-toggle-btn-mobile"></div>
+					<!--end chat overlay-->
+				</div> 
+        
+                
+                
+		
+
+{% endblock %}

@@ -1,0 +1,160 @@
+
+
+
+
+{% extends 'base.html.twig' %}
+ 
+{% block title %}Tunisiens Du Monde | Créer un compt{% endblock %}
+
+
+
+{% block body %} 
+
+
+
+<div class="intro intro-other">
+    <header class="bg-intro-other"   >
+        <div class="top-block d-md-flex justify-content-between">
+            <div class="main-logo">
+                <div class="d-flex top-logos">
+                    <div class="logo-bloc">
+                        <img src="/images/ote.png" class="w-100" alt="">
+                    </div>
+        
+                    <div class="logo-bloc">
+                        <img src="/images/tn.png" class="w-100" alt="">
+                    </div>
+                    
+        
+                </div>
+            </div>
+
+
+            <div class="actionsbtn-header d-flex">
+                 <img src="/images/logo.png" class="d-sm-none d-md-block"  class="app-logo" width="245px"  alt="">
+            </div>
+        </div>
+
+
+       
+
+    </header>
+
+
+
+
+
+    
+    <section class="inner-page" style="margin-top: 100px;margin-bottom: 100px" >
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-sm-12 m-auto card card-body">
+ 
+                     
+                      
+                        <h1 class="h3 mb-3 font-weight-normal text-center">Créer un compte</h1>
+                        
+                    
+                      {{ form_start(form) }}  
+                        <div class="row">
+                          <div class="col-sm-6">
+                            
+                              <div class="form-group mb-3">
+                                {{ form_label(form.firstname) }} 
+                                {{ form_widget(form.firstname) }}
+                                
+                              </div>
+                              <div class="form-group mb-3">
+                                {{ form_label(form.lastname) }} 
+                                {{ form_widget(form.lastname) }}
+                                
+                              </div>
+                              <div class="form-group mb-3">
+                                {{ form_label(form.age) }} 
+                                {{ form_widget(form.age) }}
+                                
+                              </div>
+                             
+
+                              <div class="form-group mb-3">
+                                {{ form_label(form.profession) }} 
+                                {{ form_widget(form.profession) }} 
+                              </div> 
+
+                              <div class="form-group mb-3 sexe-choice">
+                                {{ form_label(form.gender) }} 
+                                {{ form_widget(form.gender) }}
+                                
+                              </div>
+
+                              
+  
+
+                             
+                        
+                          </div>
+                          <div class="col-sm-6">
+
+
+                            
+                            <div class="form-group mb-3">
+                              {{ form_label(form.country) }} 
+                              {{ form_widget(form.country) }}
+                              
+                            </div>
+                            <div class="form-group mb-3">
+                              {{ form_label(form.ville) }} 
+                              {{ form_widget(form.ville) }}
+                              
+                            </div>
+                            <div class="form-group mb-3">
+                              {{ form_label(form.originTown) }} 
+                              {{ form_widget(form.originTown) }} 
+                            </div>
+                           
+                            <div class="form-group mb-3">
+                              {{ form_label(form.email) }} 
+                              {{ form_widget(form.email) }}
+                              
+                            </div>
+
+                            <div class="form-group mb-3">
+                              {{ form_label(form.password) }} 
+                              {{ form_widget(form.password) }}
+                              
+                            </div>
+
+
+
+
+                           
+
+
+                            
+                          </div>
+
+
+
+                          <div class="col-sm-6 m-auto mt-3 mb-3">
+                            <button class="btn action-btn w-100">{{ button_label|default('Créer maintenant') }}</button>
+                          </div>
+                        </div>
+                      {{ form_end(form) }}
+
+                
+            </div>
+        </div>
+        
+        
+      </div>
+    </section>
+
+
+
+
+</div>
+
+
+
+  
+{% endblock %}

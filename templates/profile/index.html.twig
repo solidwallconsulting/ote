@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ app.user.firstname }} {{ app.user.lastname }}{% endblock %}
+
+{% block body %}
+
+
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Acceuil</a></li>
+          <li>{{ app.user.firstname }} {{ app.user.lastname }}</li>
+        </ol>
+        <h2>{{ app.user.firstname }} {{ app.user.lastname }}</h2>
+
+      </div>
+    </section>
+    
+
+    <section class="inner-page">
+      <div class="container" data-aos="fade-up">
+         <div class="row">
+           <div class="col-sm-6 m-auto">
+             <div class="avatar" style="background-image: url({{ app.user.photoURL }});"></div>
+
+             <div class="text-center">
+                <h1>{{ app.user.firstname }} {{ app.user.lastname }}</h1>
+                <a href="{{ path('update_profile_route') }}" >Modifier mes informations</a> <br>
+                <a href="/logout" class="text-danger">Se déconnecter</a>
+                
+              </div>
+              
+           </div>
+         </div>
+      </div>
+    </section> 
+
+{% endblock %}

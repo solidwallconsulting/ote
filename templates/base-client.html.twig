@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}OTE | tableau de board{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        
+
+
+        {% block stylesheets %}
+
+        <link rel="icon" href="/ico.png" type="image/png" />
+        <!--plugins-->
+        <link href="/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+        <link href="/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+        <link href="/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+        <link href="/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+        <!-- loader-->
+        <link href="/assets/css/pace.min.css" rel="stylesheet" />
+        <script src="/assets/js/pace.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap-extended.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
+        <link href="/assets/css/app.css" rel="stylesheet">
+        <link href="/assets/css/icons.css" rel="stylesheet">
+        <!-- Theme Style CSS -->
+        <link rel="stylesheet" href="/assets/css/dark-theme.css" />
+        <link rel="stylesheet" href="/assets/css/semi-dark.css" />
+        <link rel="stylesheet" href="/assets/css/header-colors.css" />
+        <link href="/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+            
+        {% endblock %}
+
+        
+    </head>
+    <body>
+
+
+        <div class="wrapper">
+            <!--sidebar wrapper -->
+            <div class="sidebar-wrapper" data-simplebar="true">
+                <div class="sidebar-header">
+                    <div>
+                        <img src="{{ asset('/images/logo.png') }}" class="logo-icon" alt="logo icon" style="width: 105px; padding:10px">
+                    </div> 
+                    <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+                    </div>
+                </div>
+                <!--navigation-->
+                {% include "admin-components/sidemenu-client.html.twig" %}
+                <!--end navigation-->
+            </div>
+            <!--end sidebar wrapper -->
+            <!--start header -->
+            {% include "admin-components/header.html.twig" %}
+            <!--end header -->
+            <!--start page wrapper -->
+            <div class="page-wrapper">
+                <div class="page-content">
+
+
+                            {% if app.request.get('error') != '' %}
+                                <div class="alert alert-danger to-be-hidden" role="alert"> 
+                                    {{ app.request.get('error') }}
+                                </div>
+                            
+                            {% endif %}
+                            {% if app.request.get('ok') != '' %}
+                                <div class="alert alert-success to-be-hidden" role="alert"> 
+                                    {{ app.request.get('ok') }}
+                                </div>
+                            
+                            {% endif %}
+    
+                    {% block body %}{% endblock %} 
+    
+                </div>
+            </div>
+            <!--end page wrapper -->
+            <!--start overlay-->
+            <div class="overlay toggle-icon"></div>
+            <!--end overlay-->
+            <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+            <!--End Back To Top Button-->
+            <footer class="page-footer">
+                <p class="mb-0">Copyright © 2021. All right reserved.</p>
+            </footer>
+        </div>
+        
+
+
+
+        
+
+
+        {% block javascripts %}
+            
+            <script src="/assets/js/jquery.min.js"></script>
+            <script src="/assets/js/bootstrap.bundle.min.js"></script>  
+            <script src="/assets/plugins/simplebar/js/simplebar.min.js"></script>
+            <script src="/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+            <script src="/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+            <script src="/assets/plugins/chartjs/js/Chart.min.js"></script>
+            <script src="/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+            <script src="/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="/assets/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+            <script src="/assets/plugins/sparkline-charts/jquery.sparkline.min.js"></script>
+            <script src="/assets/plugins/jquery-knob/excanvas.js"></script>
+            <script src="/assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+	        <script src="/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	        <script src="/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+
+
+            <script>
+                $(function() {
+                    $(".knob").knob();
+                });
+            </script>
+            <!--<script src="/assets/js/index.js"></script>-->
+            <!--app JS-->
+            <script src="/assets/js/app.js"></script>
+        {% endblock %}
+    </body>
+</html>

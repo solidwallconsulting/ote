@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PartnersUtilsDocs{% endblock %}
+
+{% block body %}
+    <h1>Edit PartnersUtilsDocs</h1>
+
+    {{ include('partners_utils_docs/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_partners_utils_docs_index') }}">back to list</a>
+
+    {{ include('partners_utils_docs/_delete_form.html.twig') }}
+{% endblock %}

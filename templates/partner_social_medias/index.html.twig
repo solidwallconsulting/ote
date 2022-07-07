@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PartnerSocialMedias index{% endblock %}
+
+{% block body %}
+    <h1>PartnerSocialMedias index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Value</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partner_social_media in partner_social_medias %}
+            <tr>
+                <td>{{ partner_social_media.id }}</td>
+                <td>{{ partner_social_media.value }}</td>
+                <td>
+                    <a href="{{ path('app_partner_social_medias_show', {'id': partner_social_media.id}) }}">show</a>
+                    <a href="{{ path('app_partner_social_medias_edit', {'id': partner_social_media.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_partner_social_medias_new') }}">Create new</a>
+{% endblock %}

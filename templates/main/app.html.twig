@@ -1,0 +1,196 @@
+{% extends 'base.html.twig' %}
+
+{% block body %} 
+<!--
+<div style="height: 100vh" class="d-flex justify-content-center align-items-center text-center">
+    <p class="text-muted">
+
+
+       <img src="/images/logo.png" width="220" /> 
+       
+       <br>
+       <br>
+
+    
+
+       Merci pour votre inscription
+
+       
+       <br>
+
+       <a href="{{ path('espace_client_route') }}">Consulter mon espace</a>
+    
+    </p>
+</div>-->
+
+
+
+ 
+
+<div class="intro">
+    <header class="bg-intro">
+        <div class="top-block d-md-flex justify-content-between">
+            <div class="main-logo">
+                <div class="d-flex top-logos">
+                    
+        
+                    <div class="logo-bloc">
+                        <img src="/images/tn.png" class="w-100" alt="">
+                    </div>
+
+                    <div class="logo-bloc">
+                        <img src="/images/ote.png" class="w-100" alt="">
+                    </div>
+                    
+        
+                </div>
+            </div>
+
+
+            <div class="actionsbtn-header ">
+                 <div class="profile-section-header d-flex"> 
+
+                        <div class="connected-user-info">
+                            <p>
+                                <strong class="connected-user-name">{{ app.user.firstname }} {{ app.user.lastname }}</strong> <br>
+                                <small class="text-muted">{{ app.user.profession }}</small>
+                            </p>
+                        </div>
+                        <div  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="{{ app.user.photoURL }}" class="app-avatar" alt="">
+                        </div>
+
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{{ path('espace_client_route') }}">Mon espace</a></li> 
+                            <li><a class="dropdown-item" href="/logout">Se déconnecter</a></li> 
+                          
+                        </ul>
+                    </div> 
+                    
+                    
+            </div>
+        </div>
+
+
+        <div class="main-logos">
+
+            <img src="/images/logo.png"  class="app-logo"  alt="">
+
+            
+        </div>
+
+
+        <div class="intro-text">
+            <div class="title">La plateforme des <br>Tunisiens Du Monde</div> 
+            <div class="sub-title">
+                au profit des Tunisiens à l'étranger
+            </div>
+        </div>
+
+
+        <div class="py-5 text-center">
+            <a class="btn action-btn" href="#partners">Commencez la visite</a>
+        </div>
+
+
+    </header>
+
+
+
+</div>
+
+
+
+
+
+
+<div id="partners">
+    <div class="container mt-5 mb-5">
+
+
+        <div class="bloc-title">Nos partenaires</div> 
+
+        <div class="row">
+            {% for item in partners %}
+            <div class="col-md-3 col-sm-6 mb-3">
+                    
+
+                <div class="card-flip">
+                    <div class="content-flip">
+                      <div class="front-flip">
+                        <img src="{{ item.logoURL }}" class="w-100" alt=""> 
+    
+                        
+                      </div>
+                      <div class="back-flip">
+                        <a href="{{ path('stand_route',{id:item.id}) }}">visitez le stand en ligne</a>
+                      </div>
+                    </div>
+                  </div>
+
+            </div> 
+                
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+
+<footer class="footer-bloc">
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <div>
+                <img class="footer-icons" src="/images/footer-logo.png" alt="">
+            </div>
+            <div>
+                <img class="footer-icons" src="/images/logo-footer-r.png" alt="">
+            </div>   
+        </div>
+
+        <div class="footer-separator mt-3 mb-3"></div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p class="text-white text-footer">
+                    Plateforme virtuelle au profit des Tunisiens résidents à l'étranger
+                </p>
+            </div>
+            <div class="col-md-4">
+                 <div class="social-icons">
+                    <i class='bx bxl-facebook'></i> 
+
+                    <i class='bx bxl-instagram' ></i>
+
+                    <i class='bx bxl-youtube' ></i>
+
+
+                 </div>
+            </div>
+            <div class="col-md-4">
+                 
+                <p class="text-white text-footer">
+                    <i class='bx bx-envelope'></i>  ote.boc@ote.nat.tn<br>
+                    
+                    <i class='bx bx-globe' ></i>  www.ote.nat.tn<br>
+                    
+                    <i class='bx bx-phone'></i> 71 343 665 / 71 343 648<br>
+                    
+                    <i class='bx bx-phone'></i>  71 343 746 <br>
+                    
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</footer>  
+
+
+
+  
+{% endblock %}
+
+
+

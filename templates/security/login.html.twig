@@ -1,0 +1,101 @@
+
+
+{% extends 'base.html.twig' %}
+ 
+{% block title %}Tunisiens Du Monde | se connecter{% endblock %}
+
+
+
+{% block body %} 
+
+
+
+<div class="intro">
+    <header class="bg-intro">
+        <div class="top-block d-md-flex justify-content-between">
+            <div class="main-logo">
+                <div class="d-flex top-logos">
+                    <div class="logo-bloc">
+                        <img src="/images/ote.png" class="w-100" alt="">
+                    </div>
+        
+                    <div class="logo-bloc">
+                        <img src="/images/tn.png" class="w-100" alt="">
+                    </div>
+                    
+        
+                </div>
+            </div>
+
+
+            <div class="actionsbtn-header d-flex">
+                
+            </div>
+        </div>
+
+
+       
+    <section class="inner-page" style="margin-top: 100px" >
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-sm-6 m-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            {% if error %}
+                                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+                         
+                            <h1 class="h3 mb-3 font-weight-normal text-center">Se connecter</h1>
+                            
+                            <div class="form-group mb-3">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                                
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="inputPassword">mot de passe</label>
+                                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                        
+                            </div>
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}"
+                            > 
+
+
+                            <p class="text-muted text-end text-right">
+                                vous n'avez pas de compte ? vous pouvez en <a href="{{ path('create_account_route') }}">créer un maintenant</a> gratuitement
+                            </p>
+
+                            <p class="text-muted text-end text-right">
+                              Avez-vous oublié votre mot de passe ?  <a href="{{ path('forget_password_route') }}">réinitialisez-le </a> maintenantt
+                            </p>
+
+                            
+                        
+                            <button class="btn btn-lg action-btn w-100" type="submit">
+                                Se connecter
+                            </button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+      </div>
+    </section>
+
+
+    </header>
+
+
+
+</div>
+
+
+
+  
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Tunisiens Du Monde | Tableau de bord{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Partenaires</h3>
+                        <p class="text-muted">{{partners | length}} Partenaire(s)</p>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Membres</h3>
+                        <p class="text-muted">{{users | length}} Membre(s)</p>
+
+                        
+                    </div>
+                </div>
+            </div>
+            
+
+             
+            
+        </div>
+
+
+
+
+        <div class="row mt-5">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        
+                        <h3>Statistiques</h3>
+
+                        <p class="text-muted">Taux de message par partenaire</p>
+
+                        <hr>
+                        <table class="table"> 
+                            <tbody>
+
+                                {% for item in messagesFlux %}
+                                    <tr>
+                                        <td>
+                                           <div class="d-flex">
+                                           
+                                                <div class="logo-partner" style="
+                                                    width: 81px;
+                                                    height: 67px;
+                                                    height: 43px;
+                                                    background-position: center;
+                                                    background-size: cover; 
+                                                    background-image: url({{ item.partner.logoURL }});"></div>
+                                                
+                                           
+                                                <div> 
+                                                    <p class="text-muted"> <strong>{{ item.partner.name }}</strong> <br> {{item. partner.email }}</p>
+                                                </div>
+                                           </div>
+                                            
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-info mt-3">{{ item.messages }} message(s)</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-danger mt-3">{{ item.new_messages }} message(s) non lus</span>
+                                        </td>
+                                        
+                                    </tr>
+                                        
+                                {% endfor %}
+                                
+                            
+                            
+                            </tbody>
+                            
+                        
+                        
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+             
+            
+
+             
+            
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PartnersUtilLinkes{% endblock %}
+
+{% block body %}
+    <h1>PartnersUtilLinkes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ partners_util_linke.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ partners_util_linke.name }}</td>
+            </tr>
+            <tr>
+                <th>Value</th>
+                <td>{{ partners_util_linke.value }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_partners_util_linkes_index') }}">back to list</a>
+
+    <a href="{{ path('app_partners_util_linkes_edit', {'id': partners_util_linke.id}) }}">edit</a>
+
+    {{ include('partners_util_linkes/_delete_form.html.twig') }}
+{% endblock %}

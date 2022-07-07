@@ -1,0 +1,157 @@
+{% extends 'base-admin.html.twig' %}
+ 
+
+{% block body %}
+
+
+
+    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3"><i class="fadeIn animated bx bx-group"></i> Nos partenaires</div>
+         
+        <div class="ms-auto"> 
+                <a href="{{ path('app_partners_index') }}" type="button" class="btn btn-primary">Retour</a> 
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-body">
+            <h1>Modifier un partenaire</h1>
+
+            {{ include('partners/_form.html.twig', {'button_label': 'Enregistrer'}) }} 
+        
+        
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Réseaux sociaux</h3>
+                    
+                
+                    {{ form_start(formSocial) }}
+                        {{ form_widget(formSocial) }}
+                        <button class="btn btn-primary">{{ button_label|default('Ajouter') }}</button>
+                    {{ form_end(formSocial) }}
+
+
+                <hr>
+
+
+                <ol class="list-group list-group-numbered">
+                    {% for item in partner.partnerSocialMedias %}
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto"> 
+
+                                <div class="fw-bold">
+                                    <span style="font-size: 30px;" class="text-primary">{{ item.socialMedia.icon  | raw  }}</span>
+                                    {{ item.socialMedia.name }} 
+                                </div>
+                            <a href="{{item.value}}" >visiter l'url</a>
+                            </div>
+
+                            <form method="post" action="{{ path('app_partner_social_medias_delete', {'id': item.id}) }}" onsubmit="return confirm('Êtes-vous sûr de bien vouloir supprimer cet élément?');">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ item.id) }}">
+                                <button class="btn btn-sm btn-danger rounded-pill">Effacer</button>
+                            </form>
+                            
+                            
+                                
+                                
+                                
+                        </li>
+                    {% endfor %}
+                    
+                    
+                  </ol>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Liens utiles</h3>
+         
+                    {{ form_start(formLinks) }}
+                        {{ form_widget(formLinks) }}
+                        <button class="btn btn-primary">{{ button_label|default('Ajouter') }}</button>
+                    {{ form_end(formLinks) }}
+
+
+                    <hr>
+
+
+                    <ol class="list-group list-group-numbered">
+                        {% for link in partner.partnersUtilLinkes %}
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                <div class="fw-bold">{{ link.name }}</div>
+                                <a href="{{link.value}}" >visiter le lien</a>
+                                </div>
+                                
+                                    <form method="post" action="{{ path('app_partners_util_linkes_delete', {'id': link.id}) }}" onsubmit="return confirm('Êtes-vous sûr de bien vouloir supprimer cet élément?');">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ link.id) }}">
+                                        <button class="btn btn-sm btn-danger rounded-pill">Effacer</button>
+                                    </form>
+                                    
+                                    
+                            </li>
+                        {% endfor %}
+                        
+                        
+                      </ol>
+                
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Documents utiles</h3>
+         
+                    {{ form_start(formDoc) }}
+                        {{ form_widget(formDoc) }}
+                        <button class="btn btn-primary">{{ button_label|default('Ajouter') }}</button>
+                    {{ form_end(formDoc) }}
+
+
+                    <hr>
+
+
+                    <ol class="list-group list-group-numbered">
+                        {% for doc in partner.partnersUtilsDocs %}
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                <div class="ms-2 me-auto">
+                                <div class="fw-bold">{{ doc.name }}</div>
+                                <a href="{{doc.docURL}}" download="">afficher le document</a>
+                                </div>
+                                
+                                    <form method="post" action="{{ path('app_partners_utils_docs_delete', {'id': doc.id}) }}" onsubmit="return confirm('Êtes-vous sûr de bien vouloir supprimer cet élément?');">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ doc.id) }}">
+                                        <button class="btn btn-sm btn-danger rounded-pill">Effacer</button>
+                                    </form>
+                                    
+                                    
+                            </li>
+                        {% endfor %}
+                        
+                        
+                      </ol>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
